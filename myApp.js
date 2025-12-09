@@ -46,6 +46,10 @@ app.get("/:word/echo/", (req, res) => {
 })
 console.log("Hello World");
 
+app.get("/name",(req,res)=>{
+    const {first,last}= req.query
+   return res.json({"name": `${first} ${last}`})
+})
 
 
 
