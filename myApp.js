@@ -3,7 +3,7 @@ let app = express();
 
 console.log("Hello World");
 
-app.use(express.static("public"))
+app.use(express.static("/public/style.css"))
 
 app.get("/", (req, res) => {
     absolutePath = __dirname + "/views/index.html"
