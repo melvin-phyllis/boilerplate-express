@@ -5,7 +5,7 @@ console.log("Hello World");
 
 app.get('/', (req, res) => {
 
-    absolutePathc = __dirname + "/relativePath/file.ext"
+    absolutePathc = __dirname + "/views/index.html"
     res.sendFile(absolutePathc)
 })
 
