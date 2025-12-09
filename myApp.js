@@ -50,9 +50,9 @@ app.get("/:word/echo/", (req, res) => {
 console.log("Hello World");
 
 app.post("/name", (req, res) => {
-    const { firstname , lastname } = req.body
-    return res.json({ "name": `${firstname} ${lastname}` })
-})
+    const { first, last } = req.body;
+    res.json({ name: `${first} ${last}` });
+});
 
 
 
