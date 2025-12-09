@@ -1,10 +1,13 @@
 let dotenv = require('dotenv').config()
 let express = require('express');
+let bodyParser = require("body-parser")
 let app = express();
 
 
 
 app.use("/public", express.static(__dirname + "/public"))
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`)
@@ -42,13 +45,13 @@ app.get("/now", (req, res, next) => {
 
 app.get("/:word/echo/", (req, res) => {
     const { word } = req.params
-    res.json({"echo" :`${word}`})
+    res.json({ "echo": `${word}` })
 })
 console.log("Hello World");
 
-app.get("/name",(req,res)=>{
-    const {first,last}= req.query
-   return res.json({"name": `${first} ${last}`})
+app.get("/name", (req, res) => {
+    const { first, last } = req.query
+    return res.json({ "name": `${first} ${last}` })
 })
 
 
