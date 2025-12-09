@@ -21,8 +21,6 @@ app.get("/json", (req, res) => {
     } else {
         res.json({ "message": text });
     }
-
-
 })
 console.log("Hello World");
 
